@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Angular 6 tutorial with reactive forms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
@@ -28,5 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 =======
 # angular-fundamentals
-Basic tutorial for Angular 5
->>>>>>> 1ffacc6b524360f2f4637f6260105a0cba2e6f3d
