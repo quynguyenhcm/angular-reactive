@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
-  title = 'GitHub Browser';
+  title = 'GitHub Browser With Angular React';
 }

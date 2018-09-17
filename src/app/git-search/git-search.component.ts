@@ -13,6 +13,7 @@ export class GitSearchComponent implements OnInit {
   searchQuery: string;
   displayQuery: string;
   title: string;
+  // tslint:disable-next-line:no-shadowed-variable
   constructor(private GitSearchService: GitSearchService, private route: ActivatedRoute, private router: Router ) { }
 
   model = new AdvancedSearchModel('', '', '', null, null, '');
@@ -22,25 +23,25 @@ export class GitSearchComponent implements OnInit {
     this.route.paramMap.subscribe( (params: ParamMap) => {
       this.searchQuery = params.get('query');
       this.displayQuery = params.get('query');
-      this.gitSearch();  
-    })
+      this.gitSearch();
+    });
     this.route.data.subscribe( (result) => {
-      this.title = result.title
+      this.title = result.title;
     });
   }
 
   gitSearch = () => {
-    this.GitSearchService.gitSearch(this.searchQuery).then( (response) => {
+    this.GitSearchService.gitSearch(this.searchQuery).subscribe( (response) => {
       this.searchResults = response;
     }, (error) => {
-      alert("Error: " + error.statusText)
-    })
+      alert('Error: ' + error.statusText);
+    });
   }
 
   sendQuery = () => {
     this.searchResults = null;
-    let search : string = this.model.q;
-    let params : string = "";
+    let search: string = this.model.q;
+    let params = '';
     this.modelKeys.forEach(  (elem) => {
         if (elem === 'q') {
             return false;
@@ -48,7 +49,7 @@ export class GitSearchComponent implements OnInit {
         if (this.model[elem]) {
             params += '+' + elem + ':' + this.model[elem];
         }
-    })
+    });
     this.searchQuery = search;
     if (params !== '') {
         this.searchQuery = search + params;

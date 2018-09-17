@@ -3,8 +3,7 @@ import { GitSearch } from './git-search';
 import { GitUsers } from './git-users';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
-import {publishReplay} from 'rxjs/operators';
+import 'rxjs/add/operator/publishReplay';
 
 
 @Injectable()
