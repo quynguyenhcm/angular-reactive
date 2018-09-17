@@ -11,11 +11,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NoSpecialCharsDirective } from './no-special-chars.directive';
 
 const appRoutes: Routes = [
-  { path: '', 
-    component: HomePageComponent 
+  { path: '',
+    component: HomePageComponent
   },
-  { path: 'search',      
-    redirectTo: '/search/angular', 
+  { path: 'search',
+    redirectTo: '/search/angular',
     pathMatch: 'full' },
   {
     path: 'search/:query',
