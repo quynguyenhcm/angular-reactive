@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GitSearchService } from './git-search.service';
 import { GitSearchComponent } from './git-search/git-search.component';
+import { GitCodeSearchService } from './git-code-search.service';
+import { UnifiedSearchService } from './unified-search.service';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoSpecialCharsDirective } from './no-special-chars.directive';
+import {forkJoin} from 'rxjs';
 
 const appRoutes: Routes = [
   { path: '',
@@ -42,7 +45,7 @@ const appRoutes: Routes = [
     ),
     ReactiveFormsModule
   ],
-  providers: [GitSearchService],
+  providers: [GitSearchService, GitCodeSearchService, UnifiedSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
