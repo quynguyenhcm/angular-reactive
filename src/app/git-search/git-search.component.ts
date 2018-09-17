@@ -33,7 +33,7 @@ export class GitSearchComponent implements OnInit {
   gitSearch = () => {
     this.UnifiedSearchService.UnifiedSearch(this.searchQuery).subscribe( (response) => {
       console.log(response);
-      this.searchResults = response.repositories;
+      this.searchResults = response;
     }, (error) => {
       alert('Error: ' + error.statusText);
     });

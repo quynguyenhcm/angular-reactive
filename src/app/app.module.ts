@@ -12,6 +12,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoSpecialCharsDirective } from './no-special-chars.directive';
 import {forkJoin} from 'rxjs';
+import { FavoriteTextPipe } from './favorite-text.pipe';
+import { RepositoryDisplayComponent } from './repository-display/repository-display.component';
+import { CodeDisplayComponent } from './code-display/code-display.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -34,7 +37,10 @@ const appRoutes: Routes = [
     GitSearchComponent,
     HomePageComponent,
     NotFoundComponent,
-    NoSpecialCharsDirective
+    NoSpecialCharsDirective,
+    FavoriteTextPipe,
+    RepositoryDisplayComponent,
+    CodeDisplayComponent
   ],
   imports: [
     BrowserModule,

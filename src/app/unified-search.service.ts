@@ -6,6 +6,8 @@ import { GitCodeSearchService } from './git-code-search.service';
 import { GitSearch } from './git-search';
 import { GitCodeSearch } from './git-code-search';
 import {forkJoin} from 'rxjs';
+import { timer } from 'rxjs/observable/timer';
+import { combineLatest } from 'rxjs/observable/combineLatest';
 import { map, filter, switchMap, catchError, mergeMap } from 'rxjs/operators';
 
 @Injectable({
