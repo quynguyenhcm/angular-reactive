@@ -41,7 +41,7 @@ export class GitSearchComponent implements OnInit {
 
   sendQuery = () => {
     this.searchResults = null;
-    let search: string = this.model.q;
+    const search: string = this.model.q;
     let params = '';
     this.modelKeys.forEach(  (elem) => {
         if (elem === 'q') {
