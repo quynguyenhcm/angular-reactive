@@ -13,6 +13,7 @@ export class GitSearchComponent implements OnInit {
   searchQuery: string;
   displayQuery: string;
   title: string;
+  favorites: Array<number> = [];
   // tslint:disable-next-line:no-shadowed-variable
   constructor(private UnifiedSearchService: UnifiedSearchService, private route: ActivatedRoute, private router: Router ) { }
 
@@ -58,5 +59,16 @@ export class GitSearchComponent implements OnInit {
     this.displayQuery = this.searchQuery;
     this.gitSearch();
   }
+  checkType = (key) => {
+    return typeof key === 'string' ? 'text' : typeof key;
+  }
 
+  handleFavorite = (id) => {
+    const index = this.favorites.indexOf(id, 0);
+    if (index > -1) {
+      return this.favorites.splice(index, 1);
+    } else {
+      return this.favorites.push(id);
+    }
+  }
 }
